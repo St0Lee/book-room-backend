@@ -16,6 +16,10 @@ const bookSchema = Schema({
     price:{
         type: String,
         default: "N/A",
+    },
+    category:{
+        type: Array,
+        default: [],
     }
 }, {versionKey: false, timestamps: true});
 
