@@ -1,7 +1,9 @@
-const booksRouter = require("./routes/booksRouter")
+const booksRouter = require("./routes/booksRouter");
+const ordersRouter = require("./routes/ordersRouter");
 
 const express = require("express");
 const cors = require("cors");
+
 
 require("dotenv").config();
 const app = express();
@@ -11,6 +13,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use("/books", booksRouter);
+app.use("/orders", ordersRouter);
  
 app.use((req, res) => {res.status(404).json({message:"Not Found"})});
 app.use((error, req, res, next) => {

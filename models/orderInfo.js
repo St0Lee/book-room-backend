@@ -1,34 +1,40 @@
-const { required } = require("joi");
 const {Schema, model} = require("mongoose");
 
-const bookSchema = Schema({
-    author:{
+const orderInfoSchema = Schema({
+    name:{
         type: String,
         default: "N/A",
         required: true,
     },
-    title:{
+    surname:{
         type: String,
         default: "N/A",
         required: true,
     },
-    imageURL:{
+    phone:{
         type: String,
         default: "N/A",
         required: true,
     },
-    price:{
+    email:{
         type: String,
         default: "N/A",
-        required: true,
     },
-    category:{
+    destination:{
+        type: String,
+        default: "N/A",
+    },
+    comment:{
+        type: String,
+        default: "N/A",
+    },
+    order:{
         type: Array,
         default: [],
         required: true,
-    }
+    },
 }, {versionKey: false, timestamps: true});
 
-const Book = model("book", bookSchema);
+const OrderInfo = model("order", orderInfoSchema);
 
-module.exports = Book;
+module.exports = OrderInfo;
