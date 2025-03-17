@@ -20,7 +20,7 @@ const orderInfoSchema = Schema({
         type: String,
         default: "N/A",
     },
-    destination:{
+    warehouseName:{
         type: String,
         default: "N/A",
     },
